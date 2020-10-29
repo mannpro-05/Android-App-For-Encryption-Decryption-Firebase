@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.first_page">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".ForgotPassword"
+            android:parentActivityName=".login"
+            android:theme="@style/AppTheme.NoActionBar_1"></activity>
+        <activity android:name=".playfair_display_admin" />
+        <activity
+            android:name=".Navigation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".register"
+            android:theme="@style/AppTheme.NoActionBar_1"/>
+        <activity android:name=".admin_mainpage_handler" />
+        <activity
+            android:name=".login"
+            android:theme="@style/AppTheme.NoActionBar_1"/>
+        <activity android:name="com.example.final_Project.login" />
+        <activity
+            android:name=".diffie_history"
+            android:parentActivityName=".diffie_history"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".diffie_display"
+            android:parentActivityName=".diffie_display"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".deffi_key"
+            android:parentActivityName=".deffi_key"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".playfair_output"
+            android:parentActivityName=".playfair_output"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".playfair_display"
+            android:parentActivityName=".playfair_display"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".playfair_inp"
+            android:parentActivityName=".playfair_inp"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar_1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

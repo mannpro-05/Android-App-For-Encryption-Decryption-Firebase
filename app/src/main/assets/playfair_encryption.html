@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+		body {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  background-color: #eef;
+  overflow: auto;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 0px;
+  padding: 0px;
+}
+
+h2 {
+  margin: 0px;
+  padding: 0px;
+  color: #7551e9;
+
+}
+
+
+table,tr,td {
+    width: 350px;
+    border-color: #7551e9;
+    height: 70px;
+    color:#7551e9;
+    align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 25px;
+    border-width: 1.2px;
+}
+
+
+
+
+	</style>
+    <title>hi</title>
+    <script type="text/javascript">
+
+		function output_en(ct,key){
+
+		var count=0;
+		var a = document.getElementById('qwe');
+		tbl  = document.createElement('table');
+    	tbl.setAttribute('border','1');
+    	tbl.setAttribute('cellspacing','0');
+
+    	for(var i = 0; i < 5; i++)
+		{
+
+        var tr = tbl.insertRow();
+
+        for(var j = 0; j < 5; j++)
+        {
+                var td = tr.insertCell();
+                td.appendChild(document.createTextNode(key[count]));
+                count++;
+        }
+    	}
+    	a.innerHTML="<br><br><br><br><center><h2>Your Encrypted Text is:<br>"+ct+".<br>And the key matrix used for encryption is:<br><br><br><br><br>"
+        a.appendChild(tbl);
+
+   }
+
+   function output_de(pt,key){
+
+		var count=0;
+		var a = document.getElementById('qwe');
+		tbl  = document.createElement('table');
+    	tbl.setAttribute('border','1');
+    	tbl.setAttribute('cellspacing','0');
+
+    	for(var i = 0; i < 5; i++)
+		{
+
+        var tr = tbl.insertRow();
+
+        for(var j = 0; j < 5; j++)
+        {
+                var td = tr.insertCell();
+                td.appendChild(document.createTextNode(key[count]));
+                count++;
+        }
+    	}
+    	a.innerHTML="<br><br><br><br><center><h2>Your Decrypted Text is:<br>"+pt+".<br>And the key matrix used for Decryption is:<br><br><br><br><br>"
+        a.appendChild(tbl);
+
+   }
+	</script>
+</head>
+<body >
+<div id="qwe">
+</div>
+</body>
+</html>

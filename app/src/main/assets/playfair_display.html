@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+		body {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  background-color: #eef;
+  overflow: auto;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 0px;
+  padding: 0px;
+}
+
+h2 {
+  margin: 0px;
+  padding: 0px;
+  color: #7551e9;
+
+}
+
+
+table,tr,td {
+    width: 100%;
+    height: 50px;
+    border-color: #7551e9;
+    white-space:nowrap;
+    color:#7551e9;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 25px;
+    border-width: 1.2px;
+    overflow-y: hidden;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+
+    </style>
+    <script type="text/javascript">
+        function view(data,r,c)
+        {
+            if (r!=0)
+            {
+            var d = document.getElementById('hi');
+            titletb = "Input,Key,Mode,Output,Date,Time";
+            titletb_split = titletb.split(",");
+            temp = data.split("@");
+            tbl  = document.createElement('table');
+            tbl.setAttribute('border','1');
+            tbl.setAttribute('cellspacing','0');
+            var tr = tbl.insertRow();
+            for(var i = 0; i < c; i++)
+            {
+                var td = tr.insertCell();
+                td.appendChild(document.createTextNode(titletb_split[i]));
+            }
+            for(var i = 0; i < r; i++)
+            {
+                var tr = tbl.insertRow();
+                    var m = temp[i].split(",");
+
+                for(var j = 0; j < c; j++)
+                    {
+                        var td = tr.insertCell();
+                        td.appendChild(document.createTextNode(m[j]));
+
+                    }
+
+            }
+            d.innerHTML = "<br><center><h2>Your History is:</h2></center><br><br>"
+            d.appendChild(tbl);
+            }
+            else
+            {
+                 var d = document.getElementById('hi');
+                d.innerHTML = "<br><center><h2>Your History is:</h2></center><br><br><center><h2>That you don't have one</center>"
+            }
+
+    }
+</script>
+</head>
+<body>
+
+<div id="hi">
+
+</div>
+</body>
+</html>
+

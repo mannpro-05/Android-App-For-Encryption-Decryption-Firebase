@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/logout"
+        android:title="Logout"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom"
+        ></item>
+    <item
+        android:id="@+id/viewhis"
+        android:title="View History"
+        android:orderInCategory="2"
+       ></item>
+    <item
+        android:id="@+id/clrhistory"
+        android:title="Clear History"
+        android:orderInCategory="3"
+        ></item>
+</menu>

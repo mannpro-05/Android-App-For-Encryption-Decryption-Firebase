@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+		body {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  background-color: #eef;
+  overflow: auto;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 0px;
+  padding: 0px;
+}
+
+h2 {
+  margin: 0px;
+  padding: 0px;
+  color: #7551e9;
+
+}
+
+
+table,tr,td {
+    width: 100%;
+    height: 50px;
+    border-color: #7551e9;
+    white-space:nowrap;
+    color:#7551e9;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 25px;
+    border-width: 1.2px;
+    overflow-y: hidden;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+
+    </style>
+    <script type="text/javascript">
+        function view(alice,bob,keys,r,c,c_keys)
+        {
+            if (r!=0)
+            {
+
+            var key_id = document.getElementById('key_div');
+            var alice_id = document.getElementById('alice_div');
+            var bob_id = document.getElementById('bob_div');
+
+            title_keys = "Alice,Bob,P,G,Privet,Date,Time";
+            title_person = "Message,Sent,Received,Date,Time"
+            title_keys_split = title_keys.split(",");
+            title_person_split = title_person.split(",");
+
+            var alice_temp = alice.toString().split("@");
+            var bob_temp = bob.toString().split("@");
+            var keys_temp = keys.toString().split("@");
+
+            tbl_keys  = document.createElement('table');
+            tbl_alice = document.createElement('table');
+            tbl_bob = document.createElement('table');
+
+            tbl_keys.setAttribute('border','1');
+            tbl_keys.setAttribute('cellspacing','0');
+            tbl_alice.setAttribute('border','1');
+            tbl_alice.setAttribute('cellspacing','0');
+            tbl_bob.setAttribute('border','1');
+            tbl_bob.setAttribute('cellspacing','0');
+
+            var tr = tbl_keys.insertRow();
+            for(var i = 0; i < c_keys; i++)
+            {
+                var td = tr.insertCell();
+                td.appendChild(document.createTextNode(title_keys_split[i]));
+            }
+            for(var i = 0; i < r; i++)
+            {
+                var tr = tbl_keys.insertRow();
+                var m = keys_temp[i].split(",");
+
+                for(var j = 0; j < c_keys; j++)
+                    {
+                        var td = tr.insertCell();
+                        td.appendChild(document.createTextNode(m[j]));
+
+                    }
+
+            }
+            key_id.innerHTML = "<br><center><h2>Your History is:</h2></center><br><br><h2>The Key Table is</h2><br><br>"
+            key_id.appendChild(tbl_keys);
+
+            var tr = tbl_alice.insertRow();
+            for(var i = 0; i < c; i++)
+            {
+                var td = tr.insertCell();
+                td.appendChild(document.createTextNode(title_person_split[i]));
+            }
+            for(var i = 0; i < r; i++)
+            {
+                var tr = tbl_alice.insertRow();
+                var m = alice_temp[i].split(",");
+
+                for(var j = 0; j < c; j++)
+                    {
+                        var td = tr.insertCell();
+                        td.appendChild(document.createTextNode(m[j]));
+
+                    }
+            }
+            alice_id.innerHTML = "<br></center><br><br><h2>The Table For Alice is</h2><br><br>"
+            alice_id.appendChild(tbl_alice);
+
+            var tr = tbl_bob.insertRow();
+            for(var i = 0; i < c; i++)
+            {
+                var td = tr.insertCell();
+                td.appendChild(document.createTextNode(title_person_split[i]));
+            }
+            for(var i = 0; i < r; i++)
+            {
+                var tr = tbl_bob.insertRow();
+                var m = bob_temp[i].split(",");
+
+                for(var j = 0; j < c; j++)
+                    {
+                        var td = tr.insertCell();
+                        td.appendChild(document.createTextNode(m[j]));
+
+                    }
+
+            }
+            bob_id.innerHTML = "<br><br><br><h2>The Table For Bob is</h2><br><br>"
+            bob_id.appendChild(tbl_bob);
+            }
+            else
+            {
+            var key_id = document.getElementById('key_div');
+            var alice_id = document.getElementById('alice_div');
+            var bob_id = document.getElementById('bob_div');
+            key_id.innerHTML = "<br><center><h2>Your History is:</h2></center><br><br><center><h2>That you don't have one</center>"
+            alice_id.innerHTML = "";
+            bob_id.innerHTML = "";
+            }
+
+    }
+</script>
+</head>
+<body onload="view(3,5,7)">
+
+<div id="key_div">
+
+</div>
+<div id="alice_div">
+
+</div>
+<div id="bob_div">
+
+</div>
+</body>
+</html>
+
